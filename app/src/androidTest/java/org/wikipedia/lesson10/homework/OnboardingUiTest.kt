@@ -69,16 +69,11 @@ class OnboardingUiTest : TestCase() {
     @Test
     fun checkAddLanguagesButton() {
         run("Проверяет, что при тапе на кнопку 'Add of edit laguages' выполняется переход на экран редактирования языков") {
-            OnboardingUiScreen {
-                step("Выполняет тап на кнопку редактирования языков") {
-                    addLanguageButton.click()
-                }
+            step("Выполняет тап на кнопку редактирования языков") {
+                OnboardingUiScreen.addLanguageButton.click()
             }
-            LanguagesUiScreen {
-                step("Проверяет, что выполнился переход на экран редактирования языков") {
-                    sectionHeaderText.hasText("Your languages")
-                }
-
+            step("Проверяет, что выполнился переход на экран редактирования языков") {
+                LanguagesUiScreen.sectionHeaderText.hasText("Your languages")
             }
         }
     }
