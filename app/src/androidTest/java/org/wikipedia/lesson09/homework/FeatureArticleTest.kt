@@ -1,6 +1,5 @@
 package org.wikipedia.lesson09.homework
 
-import androidx.compose.ui.test.hasText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
@@ -9,7 +8,7 @@ import org.wikipedia.feed.announcement.AnnouncementCardView
 import org.wikipedia.feed.featured.FeaturedArticleCardView
 import org.wikipedia.main.MainActivity
 
-class WikipediaTest : TestCase() {
+class FeatureArticleTest : TestCase() {
 
     @get:Rule
     val testResult = ActivityScenarioRule(MainActivity::class.java)
