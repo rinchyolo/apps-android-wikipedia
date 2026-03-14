@@ -65,46 +65,44 @@ class WikipediaTest : TestCase() {
 
     @Test
     fun checkArticleLoadOfflineRetryOnline() {
-        run("Проверяет возможность работы приложения с выключенным wifi") {
-            before {
-                device.network.toggleMobileData(false)
-                device.network.toggleWiFi(false)
+        before("Проверяет возможность работы приложения с выключенным wifi") {
+            device.network.toggleMobileData(false)
+            device.network.toggleWiFi(false)
 
-            }.after {
+        }.after {
+            device.network.toggleMobileData(true)
+            device.network.toggleWiFi(true)
+        }.run {
+            step("Переходит в статью") {
+                OnboardingScreen.skipButton.click()
+                ExploreScreen.items {
+                    childWith<FeaturedArticle> {
+                        isInstanceOf(FeaturedArticleCardView::class.java)
+                    } perform {
+                        image.click()
+                    }
+                }
+            }
+            step("Проверяет отображение экрана с ошибкой") {
+                ErrorScreen {
+                    icon.isDisplayed()
+                    text.containsText("error")
+                    button.isDisplayed()
+                }
+            }
+            step("Включает сеть") {
                 device.network.toggleMobileData(true)
                 device.network.toggleWiFi(true)
-            }.run {
-                step("Переходит в статью") {
-                    OnboardingScreen.skipButton.click()
-                    ExploreScreen.items {
-                        childWith<FeaturedArticle> {
-                            isInstanceOf(FeaturedArticleCardView::class.java)
-                        } perform {
-                            image.click()
-                        }
-                    }
-                }
-                step("Проверяет отображение экрана с ошибкой") {
-                    ErrorScreen {
-                        icon.isDisplayed()
-                        text.containsText("error")
-                        button.isDisplayed()
-                    }
-                }
-                step("Включает сеть") {
-                    device.network.toggleMobileData(true)
-                    device.network.toggleWiFi(true)
-                }
-                step("Тапает на кнопку 'Go back'") {
-                    ErrorScreen.button.click()
-                }
-                step("Проверяет отображение экрана после включения сети") {
-                    ExploreScreen.items {
-                        childWith<FeaturedArticle> {
-                            isInstanceOf(FeaturedArticleCardView::class.java)
-                        } perform {
-                            image.isDisplayed()
-                        }
+            }
+            step("Тапает на кнопку 'Go back'") {
+                ErrorScreen.button.click()
+            }
+            step("Проверяет отображение экрана после включения сети") {
+                ExploreScreen.items {
+                    childWith<FeaturedArticle> {
+                        isInstanceOf(FeaturedArticleCardView::class.java)
+                    } perform {
+                        image.isDisplayed()
                     }
                 }
             }
@@ -113,11 +111,11 @@ class WikipediaTest : TestCase() {
 
     @Test
     fun checkApplicationLanguageChange() {
-        run("Проверка смены языка приложения") {
-            step("Переключает язык приложения на французский") {
-                device.language.switchInApp(Locale.FRENCH)
-                Thread.sleep(300)
-            }
+        before("Проверка смены языка приложения") {
+            device.language.switchInApp(Locale.FRENCH)
+        }.after {
+            device.language.switchInApp(Locale.ENGLISH)
+        }.run {
             step("Проверяет, что язык переключен") {
                 OnboardingScreen.skipButton.hasText("Sauter")
             }
