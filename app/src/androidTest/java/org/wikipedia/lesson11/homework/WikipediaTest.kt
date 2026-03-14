@@ -19,6 +19,7 @@ class WikipediaTest : TestCase() {
         run("Проверяет возможность поворота экрана") {
             step("Поворачивает экран") {
                 device.uiDevice.setOrientationLeft()
+                Thread.sleep(300)
             }
             step("Проверяет, что экран повернулся") {
                 val actual = device.uiDevice.isNaturalOrientation
@@ -33,9 +34,11 @@ class WikipediaTest : TestCase() {
         run("Проверяет включение и выключение девайса") {
             step("Выключает экран девайса") {
                 device.uiDevice.sleep()
+                Thread.sleep(300)
             }
             step("Включает экран девайса") {
                 device.uiDevice.wakeUp()
+                Thread.sleep(300)
             }
             step("Проверяет, что приложение активно") {
                 OnboardingScreen.skipButton.isDisplayed()
@@ -63,11 +66,14 @@ class WikipediaTest : TestCase() {
     @Test
     fun checkArticleLoadOfflineRetryOnline() {
         run("Проверяет возможность работы приложения с выключенным wifi") {
-            run {
-                step("Выключает сеть") {
-                    device.network.toggleMobileData(false)
-                    device.network.toggleWiFi(false)
-                }
+            before {
+                device.network.toggleMobileData(false)
+                device.network.toggleWiFi(false)
+
+            }.after {
+                device.network.toggleMobileData(true)
+                device.network.toggleWiFi(true)
+            }.run {
                 step("Переходит в статью") {
                     OnboardingScreen.skipButton.click()
                     ExploreScreen.items {
