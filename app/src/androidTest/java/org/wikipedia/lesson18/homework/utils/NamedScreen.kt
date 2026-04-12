@@ -1,0 +1,17 @@
+package org.wikipedia.lesson18.homework.utils
+
+import com.kaspersky.kaspresso.screens.KScreen
+import org.wikipedia.lesson18.homework.utils.NameHierarchy
+
+abstract class NamedScreen <T : NamedScreen<T>> : KScreen<T>() {
+
+    abstract val screenName: String
+
+    private val nameHierarchy by lazy {
+        NameHierarchy(screenName)
+    }
+
+    fun withParent(name: String): NameHierarchy {
+        return NameHierarchy(name, nameHierarchy)
+    }
+}
