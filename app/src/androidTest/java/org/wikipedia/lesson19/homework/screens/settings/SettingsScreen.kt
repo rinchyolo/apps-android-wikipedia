@@ -2,9 +2,9 @@ package org.wikipedia.lesson19.homework.screens.settings
 
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import org.wikipedia.R
+import org.wikipedia.lesson18.homework.extensions.invokeWithText
 import org.wikipedia.lesson18.homework.extensions.name
 import org.wikipedia.lesson18.homework.utils.NamedScreen
-import org.wikipedia.lesson19.homework.extensions.invokeWithText
 
 object SettingsScreen : NamedScreen<SettingsScreen>() {
 

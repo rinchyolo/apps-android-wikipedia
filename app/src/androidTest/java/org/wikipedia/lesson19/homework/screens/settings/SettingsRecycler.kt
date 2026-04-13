@@ -7,8 +7,8 @@ import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
-import org.wikipedia.lesson19.homework.extensions.name
-import org.wikipedia.lesson19.homework.extensions.withParent
+import org.wikipedia.lesson18.homework.extensions.name
+import org.wikipedia.lesson18.homework.extensions.withParent
 
 class SettingsRecycler(matcher: Matcher<View>) : KRecyclerItem<SettingsRecycler>(matcher) {
 

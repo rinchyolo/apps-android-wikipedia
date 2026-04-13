@@ -3,7 +3,7 @@ package org.wikipedia.lesson19.homework.utils
 import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
-import org.wikipedia.lesson19.homework.extensions.getName
+import org.wikipedia.lesson18.homework.extensions.getName
 
 
 class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
