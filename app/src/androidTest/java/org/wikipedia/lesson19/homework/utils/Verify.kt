@@ -3,7 +3,8 @@ package org.wikipedia.lesson19.homework.utils
 import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
-import org.wikipedia.lesson18.homework.extensions.getName
+import org.wikipedia.lesson19.homework.extensions.getName
+
 
 class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
 
@@ -43,7 +44,7 @@ class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
 
     fun isNotSelected(element: BaseAssertions) {
         steps.isNotSelected(
-            "Проверяет, что элемент не отображается '${(element as BaseActions).getName()}'",
+            "Проверяет, что элемент '${(element as BaseActions).getName()}' не активен",
             element
         )
     }

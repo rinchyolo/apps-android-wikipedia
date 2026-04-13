@@ -3,8 +3,6 @@ package org.wikipedia.lesson19.homework.screens.settings
 import android.view.View
 import com.google.android.material.materialswitch.MaterialSwitch
 import io.github.kakaocup.kakao.check.KCheckBox
-import io.github.kakaocup.kakao.chip.KChip
-import io.github.kakaocup.kakao.common.views.KView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
@@ -24,7 +22,7 @@ class SettingsRecycler(matcher: Matcher<View>) : KRecyclerItem<SettingsRecycler>
         }.name(withParent("Описание"))
     }
 
-    val сheckBox by lazy {
+    val checkBox by lazy {
         KCheckBox(matcher) {
             withParent { withId(android.R.id.widget_frame) }
             isInstanceOf(MaterialSwitch::class.java)

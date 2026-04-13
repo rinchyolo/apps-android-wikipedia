@@ -5,9 +5,9 @@ import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KTextView
 import org.wikipedia.R
 import org.wikipedia.feed.view.FeedView
-import org.wikipedia.lesson19.homework.extensions.invokeWithText
-import org.wikipedia.lesson19.homework.extensions.name
-import org.wikipedia.lesson19.homework.utils.NamedScreen
+import org.wikipedia.lesson18.homework.extensions.invokeWithText
+import org.wikipedia.lesson18.homework.extensions.name
+import org.wikipedia.lesson18.homework.utils.NamedScreen
 
 object ExploreScreen : NamedScreen<ExploreScreen>() {
 
