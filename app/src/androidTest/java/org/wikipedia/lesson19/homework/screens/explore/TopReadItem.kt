@@ -1,4 +1,4 @@
-package org.wikipedia.lesson18.homework.screens.explore
+package org.wikipedia.lesson19.homework.screens.explore
 
 import android.view.View
 import io.github.kakaocup.kakao.image.KImageView

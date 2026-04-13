@@ -1,12 +1,13 @@
-package org.wikipedia.lesson18.homework.screens.explore
+package org.wikipedia.lesson19.homework.screens.explore
 
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerView
+import io.github.kakaocup.kakao.text.KTextView
 import org.wikipedia.R
 import org.wikipedia.feed.view.FeedView
-import org.wikipedia.lesson18.homework.extensions.invokeWithText
-import org.wikipedia.lesson18.homework.extensions.name
-import org.wikipedia.lesson18.homework.utils.NamedScreen
+import org.wikipedia.lesson19.homework.extensions.invokeWithText
+import org.wikipedia.lesson19.homework.extensions.name
+import org.wikipedia.lesson19.homework.utils.NamedScreen
 
 object ExploreScreen : NamedScreen<ExploreScreen>() {
 
@@ -18,6 +19,12 @@ object ExploreScreen : NamedScreen<ExploreScreen>() {
         KImageView {
             withId(R.id.main_toolbar_wordmark)
         }.name(withParent("Логотип"))
+    }
+
+    val tabMore by lazy {
+        KTextView {
+            withId(R.id.nav_tab_more)
+        }.name(withParent("Таб More"))
     }
 
     val items by lazy {
