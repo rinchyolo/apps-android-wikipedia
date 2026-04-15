@@ -1,5 +1,6 @@
 package org.wikipedia.lesson19.homework.utils
 
+import io.github.kakaocup.kakao.check.CheckableAssertions
 import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
@@ -42,9 +43,9 @@ class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
         )
     }
 
-    fun isNotSelected(element: BaseAssertions) {
-        steps.isNotSelected(
-            "Проверяет, что элемент '${(element as BaseActions).getName()}' не активен",
+    fun isNotChecked(element: CheckableAssertions) {
+        steps.isNotChecked(
+            "Проверяет, что чекбокс '${(element as BaseActions).getName()}' не активен",
             element
         )
     }

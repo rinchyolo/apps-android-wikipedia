@@ -1,6 +1,7 @@
 package org.wikipedia.lesson19.homework.utils
 
 import com.kaspersky.kaspresso.testcases.core.testcontext.TestContext
+import io.github.kakaocup.kakao.check.CheckableAssertions
 import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
@@ -41,9 +42,9 @@ class StepDefinitions(private val testContext: TestContext<*>) {
         }
     }
 
-    fun isNotSelected(step: String, element: BaseAssertions) {
+    fun isNotChecked(step: String, element: CheckableAssertions) {
         execute(step) {
-            element.isNotSelected()
+            element.isNotChecked()
         }
     }
 }

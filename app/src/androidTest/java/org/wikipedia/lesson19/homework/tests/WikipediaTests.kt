@@ -39,7 +39,7 @@ class WikipediaTests : TestCase(Kaspresso.Builder.withForcedAllureSupport(false)
             action.click(BottomSheet.settings)
             SettingsScreen.showLinkPreviewsBlock {
                 action.click(this)
-                verify.isNotSelected(checkBox)
+                verify.isNotChecked(checkBox)
             }
         }
     }
