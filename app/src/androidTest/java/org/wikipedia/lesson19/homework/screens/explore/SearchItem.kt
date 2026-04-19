@@ -20,7 +20,7 @@ class SearchItem(matcher: Matcher<View>) : KRecyclerItem<SearchItem>(matcher) {
         }.name(withParent("Иконка поиска"))
     }
 
-    val text by lazy {
+    val hint by lazy {
         KTextView(matcher) {
             withText(R.string.search_hint)
         }.name(withParent("Текст"))

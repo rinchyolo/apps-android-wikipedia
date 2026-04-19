@@ -50,5 +50,9 @@ object ExploreScreen : NamedScreen<ExploreScreen>() {
     fun topReadBlock(fnc: TopReadItem.() -> Unit) {
         items.invokeWithText("Top read", fnc)
     }
+
+    fun searchBlock(fnc: SearchItem.() -> Unit) {
+        items.invokeWithText("Search Wikipedia", fnc)
+    }
 }
 
