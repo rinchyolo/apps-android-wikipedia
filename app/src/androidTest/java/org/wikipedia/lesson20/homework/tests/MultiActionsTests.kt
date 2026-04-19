@@ -15,7 +15,7 @@ import org.wikipedia.lesson20.homework.helpers.multiAction
 import org.wikipedia.lesson20.homework.screens.SearchScreen
 import org.wikipedia.main.MainActivity
 
-class OnboardingScreenTests : TestCase(Kaspresso.Builder.withForcedAllureSupport(false)) {
+class MultiActionsTests : TestCase(Kaspresso.Builder.withForcedAllureSupport(false)) {
 
     @get:Rule
     val testRule = ActivityScenarioRule(MainActivity::class.java)
