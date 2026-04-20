@@ -4,10 +4,12 @@ import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KTextView
 import org.wikipedia.R
+import org.wikipedia.feed.featured.FeaturedArticleCardView
 import org.wikipedia.feed.view.FeedView
 import org.wikipedia.lesson18.homework.extensions.invokeWithText
 import org.wikipedia.lesson18.homework.extensions.name
 import org.wikipedia.lesson18.homework.utils.NamedScreen
+import org.wikipedia.lesson21.invokeAtIndexAndClass
 
 object ExploreScreen : NamedScreen<ExploreScreen>() {
 
@@ -54,5 +56,15 @@ object ExploreScreen : NamedScreen<ExploreScreen>() {
     fun searchBlock(fnc: SearchItem.() -> Unit) {
         items.invokeWithText("Search Wikipedia", fnc)
     }
-}
 
+    fun featuredArticle(index: Int, fnc: FeaturedArticle.() -> Unit) {
+        items.invokeAtIndexAndClass(
+            index,
+            FeaturedArticleCardView::class.java,
+            (index - 1) * 10,
+            1,
+            "$index блок Featured article",
+            fnc
+        )
+    }
+}

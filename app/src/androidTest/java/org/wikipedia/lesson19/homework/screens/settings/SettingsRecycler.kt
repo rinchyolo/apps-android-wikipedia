@@ -24,8 +24,7 @@ class SettingsRecycler(matcher: Matcher<View>) : KRecyclerItem<SettingsRecycler>
 
     val checkBox by lazy {
         KCheckBox(matcher) {
-            withParent { withId(android.R.id.widget_frame) }
-            isInstanceOf(MaterialSwitch::class.java)
+            withId(R.id.switchWidget)
         }.name(withParent("Чекбокс"))
     }
 }
