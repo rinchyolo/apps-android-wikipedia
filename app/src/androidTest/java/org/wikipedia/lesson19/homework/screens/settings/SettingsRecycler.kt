@@ -13,7 +13,7 @@ import org.wikipedia.lesson18.homework.extensions.withParent
 class SettingsRecycler(matcher: Matcher<View>) : KRecyclerItem<SettingsRecycler>(matcher) {
 
     val title = KTextView(matcher) {
-        withId(R.id.title)
+        withId(android.R.id.title)
     }.name(withParent("Текст"))
 
     val summary by lazy {
