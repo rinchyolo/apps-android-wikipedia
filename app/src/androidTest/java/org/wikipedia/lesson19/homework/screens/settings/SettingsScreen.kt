@@ -37,7 +37,7 @@ object SettingsScreen : NamedScreen<SettingsScreen>() {
         items.invokeAtIndexAndResId(
             index,
             R.id.switchWidget,
-            (index - 1) * 10,
+            (index + 1) * 10,
             1,
             "$index блок c чекбоксом",
             fnc
@@ -48,7 +48,7 @@ object SettingsScreen : NamedScreen<SettingsScreen>() {
         items.invokeAtIndexAndResId(
             index,
             R.id.right_icon,
-            (index - 1) * 10,
+            (index + 1) * 10,
             1,
             "$index блок c правой иконкой",
             fnc
