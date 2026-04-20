@@ -5,7 +5,7 @@ import org.wikipedia.R
 import org.wikipedia.lesson18.homework.extensions.invokeWithText
 import org.wikipedia.lesson18.homework.extensions.name
 import org.wikipedia.lesson18.homework.utils.NamedScreen
-import org.wikipedia.lesson21.invokeAtIndexAndResId
+import org.wikipedia.lesson21.homework.invokeAtIndexAndResId
 
 object SettingsScreen : NamedScreen<SettingsScreen>() {
 

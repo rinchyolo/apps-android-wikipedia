@@ -1,4 +1,4 @@
-package org.wikipedia.lesson21
+package org.wikipedia.lesson21.homework
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.components.alluresupport.withForcedAllureSupport

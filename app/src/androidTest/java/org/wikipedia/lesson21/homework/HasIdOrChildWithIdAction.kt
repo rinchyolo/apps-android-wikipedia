@@ -1,4 +1,4 @@
-package org.wikipedia.lesson21
+package org.wikipedia.lesson21.homework
 
 import android.view.View
 import androidx.test.espresso.UiController
