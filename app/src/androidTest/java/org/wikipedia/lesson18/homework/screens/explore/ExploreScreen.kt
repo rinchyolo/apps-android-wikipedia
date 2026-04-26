@@ -7,6 +7,7 @@ import org.wikipedia.feed.view.FeedView
 import org.wikipedia.lesson18.homework.extensions.invokeWithText
 import org.wikipedia.lesson18.homework.extensions.name
 import org.wikipedia.lesson18.homework.utils.NamedScreen
+import org.wikipedia.lesson22.SearchWidget
 
 object ExploreScreen : NamedScreen<ExploreScreen>() {
 
@@ -34,6 +35,12 @@ object ExploreScreen : NamedScreen<ExploreScreen>() {
                 itemType(::FeaturedArticle)
             }
         ).name(withParent("Список виджетов"))
+    }
+
+    val searchWidget by lazy {
+        SearchWidget {
+            withId(R.id.search_container)
+        }.name(withParent("Виджет поиска"))
     }
 
     fun customizeBlock(fnc: CustomizeItem.() -> Unit) {

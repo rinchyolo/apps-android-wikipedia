@@ -49,4 +49,18 @@ class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
             element
         )
     }
+
+    fun isEnabled(element: BaseAssertions) {
+        steps.isEnabled(
+            "Проверяет, что '${(element as BaseActions).getName()} доступен для взаимодействия'",
+            element
+        )
+    }
+
+    fun isDisabled(element: BaseAssertions) {
+        steps.isDisabled(
+            "Проверяет, что '${(element as BaseActions).getName()} недоступен для взаимодействия'",
+            element
+        )
+    }
 }
