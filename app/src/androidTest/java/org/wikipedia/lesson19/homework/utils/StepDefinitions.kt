@@ -6,6 +6,7 @@ import io.github.kakaocup.kakao.check.CheckableAssertions
 import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
+import org.wikipedia.lesson23.homework.KWebViewElement
 
 class StepDefinitions(private val testContext: TestContext<*>) {
 
@@ -64,6 +65,12 @@ class StepDefinitions(private val testContext: TestContext<*>) {
     fun isNotChecked(step: String, element: CheckableAssertions) {
         execute(step) {
             element.isNotChecked()
+        }
+    }
+
+    fun isDisplayed(step: String, element: KWebViewElement) {
+        execute(step) {
+            element.performWebViewAction { scroll() }
         }
     }
 }

@@ -5,6 +5,7 @@ import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.wikipedia.lesson18.homework.extensions.getName
+import org.wikipedia.lesson23.homework.KWebViewElement
 
 
 class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
@@ -60,6 +61,13 @@ class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
     fun isDisabled(element: BaseAssertions) {
         steps.isDisabled(
             "Проверяет, что '${(element as BaseActions).getName()} недоступен для взаимодействия'",
+            element
+        )
+    }
+
+    fun isDisplayed(element: KWebViewElement) {
+        steps.isDisplayed(
+            "Проверяет, что '${(element as BaseActions).getName()} видим'",
             element
         )
     }
