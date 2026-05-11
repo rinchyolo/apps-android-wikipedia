@@ -6,7 +6,6 @@ import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
-import org.wikipedia.lesson13.homework.DialogScreen
 import org.wikipedia.lesson19.homework.extensions.action
 import org.wikipedia.lesson19.homework.extensions.verify
 import org.wikipedia.lesson19.homework.screens.explore.ExploreScreen
@@ -21,7 +20,7 @@ class SmartScenarioTest : TestCase(Kaspresso.Builder.withForcedAllureSupport(fal
     val testRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
-    fun changeFontSizeTest() {
+    fun changeMatchSystemTheme() {
         run {
             action.click(OnboardingScreen.skipButton)
             ExploreScreen.featuredArticleBlock {
@@ -29,9 +28,9 @@ class SmartScenarioTest : TestCase(Kaspresso.Builder.withForcedAllureSupport(fal
             }
             action.click(BottomNavigation.themeNavigation)
             BottomSheet.themeWidget {
-                action.click(increaseSizeButton)
-                verify.hasText(sizePercentText, "110%")
-                action.click(decreaseSizeButton)
+                action.setChecked(chooserMatchSystem, false)
+                verify.isEnabled(themeDarkButton)
+                verify.isEnabled(themeBlackButton)
             }
         }
     }
