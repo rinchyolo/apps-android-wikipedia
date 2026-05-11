@@ -27,7 +27,6 @@ class SmartScenarioTest : TestCase(Kaspresso.Builder.withForcedAllureSupport(fal
             ExploreScreen.featuredArticleBlock {
                 action.click(this)
             }
-            smartScenarios.closePlayTodayGame()
             action.click(BottomNavigation.themeNavigation)
             BottomSheet.themeWidget {
                 action.click(increaseSizeButton)

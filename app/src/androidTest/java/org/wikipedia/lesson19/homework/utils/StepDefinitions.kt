@@ -7,6 +7,7 @@ import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.wikipedia.lesson23.homework.KWebViewElement
+import org.wikipedia.lesson25.homework.CloseGotIt
 import org.wikipedia.lesson25.homework.ClosePlayTodayGame
 import org.wikipedia.lesson25.homework.PassInterferingScreens
 
@@ -14,7 +15,8 @@ class StepDefinitions(private val testContext: TestContext<*>) {
 
     private val passInterferingScreens = PassInterferingScreens(
         listOf(
-            ClosePlayTodayGame(testContext)
+            ClosePlayTodayGame(testContext),
+            CloseGotIt(testContext)
         )
     )
 
