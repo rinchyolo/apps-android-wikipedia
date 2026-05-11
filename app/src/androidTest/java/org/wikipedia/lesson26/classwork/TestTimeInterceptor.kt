@@ -16,4 +16,5 @@ class TestTimeInterceptor : ViewBehaviorInterceptor {
         Log.i("KASPRESSO", "Time: ${afterTime - beforeTime}")
         return result
     }
+
 }
